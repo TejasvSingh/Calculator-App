@@ -33,7 +33,14 @@ class ViewController: UIViewController {
     
     @IBAction func equals(_ sender: Any) {
         resultNumber = String(doOperation())
-        numOnScreen.text = resultNumber
+        let numArray = resultNumber.components(separatedBy: ".")
+        if numArray[1] == "0"{
+            numOnScreen.text = numArray[0]
+        }
+        else{
+            numOnScreen.text = resultNumber
+        }
+      
         numberAfterResult = ""
     }
     
